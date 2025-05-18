@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-hearts"></div>
+    
+    <div class="container">
+        <h1>Happy 3rd Anniversary!</h1>
+        <div class="heart">❤️</div>
+        <p class="message">To the most amazing person in my life.<br>Three wonderful years together and countless more to come!</p>
+        
+        <nav class="navigation">
+            <a href="#memories" class="nav-link">Memories</a>
+            <a href="#gift" class="nav-link">Gift</a>
+            <a href="#photos" class="nav-link">Photos</a>
+            <a href="#timeline" class="nav-link">Our Journey</a>
+            <a href="#letter" class="nav-link">Love Letter</a>
+        </nav>
+        
+        <div id="memories" class="memory">
+            <div class="memory-title">Our Special Memories</div>
+            <p id="memoryText">Our first date when we couldn't stop talking until the restaurant closed...</p>
+        </div>
+
+        <div id="gift" class="gift-box">
+            <div class="lid"></div>
+            <div class="gift-content">❤️</div>
+        </div>
+
+        <button class="btn" id="specialBtn">Click For A Special Message</button>
+        
+        <div id="photos" class="photos">
+            <div class="photo" style="--rotation: -5deg">
+                <img src="/api/placeholder/120/120" alt="placeholder" />
+            </div>
+            <div class="photo" style="--rotation: 3deg">
+                <img src="/api/placeholder/120/120" alt="placeholder" />
+            </div>
+            <div class="photo" style="--rotation: -3deg">
+                <img src="/api/placeholder/120/120" alt="placeholder" />
+            </div>
+        </div>
+
+        <!-- Timeline of your relationship -->
+        <div id="timeline" class="timeline">
+            <h2>Our Journey Together</h2>
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">May 16, 2022</div>
+                    <p>The day we became official ❤️</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">July 2022</div>
+                    <p>Our first weekend trip together</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">December 2022</div>
+                    <p>Our first holiday season as a couple</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">May 16, 2023</div>
+                    <p>1 year anniversary celebration!</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">May 16, 2024</div>
+                    <p>2 years of love and adventures</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item clearfix">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Today</div>
+                    <p>3 amazing years together and forever to go ❤️</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="letter" class="love-letter">
+            <h2>My Love Letter to You</h2>
+            <div class="letter-content">
+                <p>My Dearest,</p>
+                <p>
+                    As we celebrate our third year together, I find myself at a loss for words to express just how deeply you've touched my life. From the moment we met, you've brought a warmth and joy into my world that I never knew was possible.
+                </p>
+                <p>
+                    Every morning I wake up beside you feels like a blessing. Every smile you share brightens even my darkest days. Every challenge we've faced together has only strengthened what we have.
+                </p>
+                <p>
+                    I love the way your eyes light up when you talk about your passions. I love how you know exactly what to say when I need encouragement. I love our quiet moments just as much as our adventures.
+                </p>
+                <p>
+                    Three years may seem like just a moment in the grand scheme of things, but they have been the most beautiful moments of my life. And I know that what we have is just the beginning.
+                </p>
+                <p>
+                    I promise to continue growing with you, supporting your dreams, and loving you more deeply with each passing day. Thank you for choosing me, for loving me, and for building this beautiful life with me.
+                </p>
+                <p>
+                    Here's to many more years of love, laughter, and making memories together.
+                </p>
+                <p>Forever yours,</p>
+                <p class="signature">Me ❤️</p>
+            </div>
+        </div>
+        
+        <div class="quote-section">
+            <blockquote>
+                "I fell in love with you because you loved me when I couldn't love myself."
+            </blockquote>
+        </div>
+        
+        <div class="future-plans">
+            <h2>Our Future Together</h2>
+            <div class="bucket-list">
+                <div class="bucket-item">
+                    <span class="bucket-icon">✈️</span>
+                    <p>Travel to Paris together</p>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-icon">🏠</span>
+                    <p>Build our dream home</p>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-icon">🌄</span>
+                    <p>Watch the sunrise from a mountain top</p>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-icon">🌊</span>
+                    <p>Learn to surf together</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>With all my love, today and always</p>
+            <p>♥ May 15, 2025 ♥</p>
+        </div> <!-- closing container div -->
+
+    <div class="music-control" id="musicToggle">🎵</div>
+    
+    <div class="modal" id="specialMessage">
+        <div class="modal-content">
+            <h2 class="modal-title">My Love For You</h2>
+            <p>
+                Three years ago, I found someone who makes every day brighter, every laugh louder, and every moment more meaningful.
+                You've been my best friend, my confidant, and my greatest adventure.
+            </p>
+            <p>
+                Through the ups and downs, your love has been my constant. I cherish every memory we've created together, and I'm excited for all that's yet to come.
+            </p>
+            <p>
+                Here's to us – to three incredible years and to a lifetime of love ahead. I love you more than words can express.
+            </p>
+            <button class="close-modal">Close ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const floatingHearts = document.querySelector('.floating-hearts');
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.style.animation = `floatHeart ${Math.random() * 10 + 15}s linear forwards`;
+            
+            floatingHearts.appendChild(heart);
+            
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 25000);
+        }
+        
+        // Create hearts periodically
+        setInterval(createHearts, 300);
+
+
+        // TODO
+        
+        // Memories array - replace with your actual memories!
+        const memories = [
+            "Our first date when we couldn't stop talking until the restaurant closed...",
+            "That time we got caught in the rain and had to take shelter under a tiny awning...",
+            "Our first road trip together when we got lost but found that amazing hidden restaurant...",
+            "The moment we both realized we were thinking the same thing without saying a word...",
+            "The night we stayed up talking until sunrise...",
+            "That spontaneous dance in the kitchen that turned into a tradition...",
+            "When you surprised me with tickets to see my favorite band...",
+            "Our first argument and how we solved it with ice cream...",
+            "That hiking trail where we promised to return every anniversary...",
+            "The day we decided we were meant for each other..."
+        ];
+        
+        // Change memories every few seconds
+        let currentMemory = 0;
+        const memoryText = document.getElementById('memoryText');
+        
+        function changeMemory() {
+            memoryText.style.opacity = 0;
+            
+            setTimeout(() => {
+                currentMemory = (currentMemory + 1) % memories.length;
+                memoryText.textContent = memories[currentMemory];
+                memoryText.style.opacity = 1;
+            }, 500);
+        }
+        
+        setInterval(changeMemory, 5000);
+        
+        // Gift box animation
+        const giftBox = document.querySelector('.gift-box');
+        const giftContent = document.querySelector('.gift-content');
+        
+        giftBox.addEventListener('click', () => {
+            giftBox.classList.toggle('open');
+            
+            if (giftBox.classList.contains('open')) {
+                setTimeout(() => {
+                    giftContent.style.display = 'block';
+                }, 500);
+            } else {
+                giftContent.style.display = 'none';
+            }
+        });
+        
+        // Special message modal
+        const specialBtn = document.getElementById('specialBtn');
+        const specialMessage = document.getElementById('specialMessage');
+        const closeModal = document.querySelector('.close-modal');
+        
+        specialBtn.addEventListener('click', () => {
+            specialMessage.classList.add('show');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            specialMessage.classList.remove('show');
+        });
+        
+        // Click outside to close modal
+        specialMessage.addEventListener('click', (e) => {
+            if (e.target === specialMessage) {
+                specialMessage.classList.remove('show');
+            }
+        });
+        
+        // Background music
+        let audio = new Audio('https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/sounds/bell_ring.mp3');
+        audio.loop = true;
+        
+        const musicToggle = document.getElementById('musicToggle');
+        let musicPlaying = false;
+        
+        musicToggle.addEventListener('click', () => {
+            if (musicPlaying) {
+                audio.pause();
+                musicToggle.textContent = '🎵';
+                musicPlaying = false;
+            } else {
+                audio.play().catch(e => console.log('Audio play failed:', e));
+                musicToggle.textContent = '🔇';
+                musicPlaying = true;
+            }
+        });
+        
+        // Make photos clickable to show in larger view
+        const photos = document.querySelectorAll('.photo');
+        
+        photos.forEach(photo => {
+            photo.addEventListener('click', () => {
+                const img = photo.querySelector('img');
+                const modal = document.createElement('div');
+                modal.className = 'modal show';
+                
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <img src="${img.src}" alt="Memory" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                        <p>A special moment we shared together ❤️</p>
+                        <button class="close-modal">Close</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                modal.querySelector('.close-modal').addEventListener('click', () => {
+                    modal.remove();
+                });
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
+            });
+        });
+        
+        // Detect when user arrives at the page for the first time
+        window.addEventListener('load', () => {
+            // You could add a welcoming animation or effect here
+            console.log('Page loaded, welcome to our anniversary celebration!');
+        });
+    </script>
+</body>
+</html>
