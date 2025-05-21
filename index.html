@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="introScreen">
+      <div class="intro-content">
+        <div class="heart-animation">❤️</div>
+        <h1>Happy 3rd Anniversary princess👸🏻✨!</h1>
+        <p>I hope this will make you happy, enjoy it my little angel</p>
+        <button id="startButton">Begin Our Journey</button>
+      </div>
+    </div>
     <!-- Animated Background -->
     <div class="bg-animation">
       <div class="bg-shape"></div>
@@ -63,7 +71,7 @@
           <img src="firstDate.JPG" alt="Our first date" />
         </div>
         <div class="photo" style="--rotation: 3deg">
-          <img src="img1.jpg" alt="Weekend getaway" />
+          <img src="img1.JPG" alt="Weekend getaway" />
         </div>
         <div class="photo" style="--rotation: -3deg">
           <img src="img2.JPG" alt="Holiday celebration" />
@@ -84,22 +92,22 @@
           <img src="img7.JPG" alt="Anniversary dinner" />
         </div>
         <div class="photo" style="--rotation: -5deg">
-          <img src="img8.jpg" alt="Our first date" />
+          <img src="img8.JPG" alt="Our first date" />
         </div>
         <div class="photo" style="--rotation: 3deg">
-          <img src="img9.jpg" alt="Weekend getaway" />
+          <img src="img9.JPG" alt="Weekend getaway" />
         </div>
         <div class="photo" style="--rotation: -3deg">
-          <img src="img10.jpg" alt="Holiday celebration" />
+          <img src="img10.JPG" alt="Holiday celebration" />
         </div>
         <div class="photo" style="--rotation: 4deg">
-          <img src="img11.jpg" alt="Anniversary dinner" />
+          <img src="img11.JPG" alt="Anniversary dinner" />
         </div>
         <div class="photo" style="--rotation: -5deg">
-          <img src="img12.jpg" alt="Our first date" />
+          <img src="img12.JPG" alt="Our first date" />
         </div>
         <div class="photo" style="--rotation: 3deg">
-          <img src="img13.jpg" alt="Weekend getaway" />
+          <img src="img13.JPG" alt="Weekend getaway" />
         </div>
       </section>
 
@@ -360,7 +368,10 @@
 
     <!-- Music Control -->
     <div class="music-control" id="musicToggle">🎵</div>
-
+    <audio id="backgroundMusic" loop>
+      <source src="music/song.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
     <!-- Special Message Modal -->
     <div class="modal" id="specialMessage">
       <div class="modal-content">
@@ -496,41 +507,104 @@
       });
 
       // Background music with multiple tracks
-      const musicFile = "music\song.mp3"; // Change this to your music file name
-      let audio = null;
-      const musicToggle = document.getElementById("musicToggle");
-      let musicPlaying = false;
+      // Find the existing musicToggle script section and replace it with this:
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hide main content initially
+        const container = document.querySelector(".container");
+        const bgAnimation = document.querySelector(".bg-animation");
+        const floatingHearts = document.querySelector(".floating-hearts");
+        const musicControl = document.querySelector(".music-control");
 
-      musicToggle.addEventListener("click", () => {
-        if (musicPlaying) {
-          if (audio) {
-            audio.pause();
-          }
-          musicToggle.textContent = "🎵";
-          musicToggle.style.background =
-            "linear-gradient(45deg, #ff6b97, #c44569)";
-          musicPlaying = false;
-        } else {
-          // Create a simple audio context for a romantic tone
-          try {
-            const audioContext = new (window.AudioContext ||
-              window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
+        if (container) container.style.opacity = "0";
+        if (bgAnimation) bgAnimation.style.opacity = "0";
+        if (floatingHearts) floatingHearts.style.opacity = "0";
+        if (musicControl) musicControl.style.opacity = "0";
 
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
+        // Add background music element if not already present
+        if (!document.getElementById("backgroundMusic")) {
+          const audioElement = document.createElement("audio");
+          audioElement.id = "backgroundMusic";
+          audioElement.loop = true;
 
-            oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
-            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+          const sourceElement = document.createElement("source");
+          sourceElement.src = "music/song.mp3";
+          sourceElement.type = "audio/mpeg";
 
-            musicToggle.textContent = "🔇";
-            musicToggle.style.background =
-              "linear-gradient(45deg, #28a745, #20c997)";
-            musicPlaying = true;
-          } catch (e) {
-            console.log("Audio play failed:", e);
-          }
+          audioElement.appendChild(sourceElement);
+          document.body.appendChild(audioElement);
+        }
+
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        const startButton = document.getElementById("startButton");
+        const introScreen = document.getElementById("introScreen");
+
+        // Start the experience when button is clicked
+        startButton.addEventListener("click", function () {
+          // Play music
+          backgroundMusic
+            .play()
+            .then(() => {
+              // Update music toggle button state
+              const musicToggle = document.getElementById("musicToggle");
+              if (musicToggle) {
+                musicToggle.textContent = "🔇";
+                musicToggle.style.background =
+                  "linear-gradient(45deg, #28a745, #20c997)";
+              }
+
+              // Fade out intro screen
+              introScreen.style.opacity = "0";
+
+              // Show main content with a slight delay
+              setTimeout(() => {
+                if (container) container.style.opacity = "1";
+                if (bgAnimation) bgAnimation.style.opacity = "1";
+                if (floatingHearts) floatingHearts.style.opacity = "1";
+                if (musicControl) musicControl.style.opacity = "1";
+
+                // Remove intro screen from DOM after transition
+                setTimeout(() => {
+                  introScreen.remove();
+                }, 1000);
+              }, 500);
+            })
+            .catch((e) => {
+              console.log("Audio play failed:", e);
+              alert(
+                "Please try again by clicking the button. Your browser may be blocking audio playback."
+              );
+            });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const musicToggle = document.getElementById("musicToggle");
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        let musicPlaying = true; // We assume music is playing after start button
+
+        // Toggle music on/off when clicking the music button
+        if (musicToggle) {
+          musicToggle.addEventListener("click", () => {
+            if (musicPlaying) {
+              backgroundMusic.pause();
+              musicToggle.textContent = "🎵";
+              musicToggle.style.background =
+                "linear-gradient(45deg, #ff6b97, #c44569)";
+              musicPlaying = false;
+            } else {
+              backgroundMusic
+                .play()
+                .then(() => {
+                  musicToggle.textContent = "🔇";
+                  musicToggle.style.background =
+                    "linear-gradient(45deg, #28a745, #20c997)";
+                  musicPlaying = true;
+                })
+                .catch((e) => {
+                  console.log("Audio play failed:", e);
+                });
+            }
+          });
         }
       });
 
